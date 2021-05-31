@@ -4,6 +4,8 @@
     <demo></demo>
     <span class="test">指令</span>
     <div v-demo="test"></div>
+    输入数字，敲回车键更新指令数据滚动<input @keyup.enter="updateTestNum" v-model="testNum"/>
+    <div v-scroll-number="scrollOption"></div>
     filter
     <div>{{test | demo(1)}}</div>
   </div>
@@ -18,7 +20,11 @@
     components: {Demo},
     data() {
       return {
-        test: "测试指令value"
+        test: "测试指令value",
+        testNum: 1000,
+        scrollOption: {
+          value: 0, target: 1000, step: 0, time: 2
+        }
       }
     },
     mounted() {
@@ -37,6 +43,13 @@
       });
       let orderInfo1 = this.$store.state.order.orderInfo;
       console.log('init orderInfo1 ', orderInfo1 && orderInfo1.name);
+    },
+    methods: {
+      updateTestNum() {
+        this.scrollOption = {
+          value: 0, target: this.testNum - 0, step: 0, time: 2
+        };
+      }
     }
   }
 </script>
