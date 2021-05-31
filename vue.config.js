@@ -13,7 +13,7 @@ module.exports = {
       .set("@", resolve("src"))
       .set("@assets", resolve("src/assets"))
       .set("@views", resolve("src/views"))
-      .set("@components", resolve("src/components"))
+      .set("@common", resolve("src/common"))
       .set("@utils", resolve("src/utils"))
       .set("@api", resolve("src/api")); /* 别名配置 */
     config.optimization.runtimeChunk("single");

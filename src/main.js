@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './components/direct'
 import filter from './components/filter'
+require("./assets/css/reset.scss");
 
 // 过滤器
 for (let key in filter) {

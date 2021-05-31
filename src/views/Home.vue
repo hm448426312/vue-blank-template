@@ -2,7 +2,7 @@
   <div class="home">
     <input v-model="test"/>
     <demo></demo>
-    指令
+    <span class="test">指令</span>
     <div v-demo="test"></div>
     filter
     <div>{{test | demo(1)}}</div>
@@ -40,3 +40,11 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  @import "@assets/css/variable";
+
+  .test {
+    font-weight: $fontBold;
+  }
+</style>
